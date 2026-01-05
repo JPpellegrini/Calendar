@@ -1,13 +1,20 @@
 <!doctype html>
-<html>
+<html class="bg-white dark:bg-gray-950 scheme-light dark:scheme-dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 </head>
 <body>
+  @theme {
+    --font-sans: InterVariable, sans-serif;
+    --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
   <h1 class="text-3xl font-bold underline">
     Hola Mundo!
   </h1>
+
+  <script src="https://cdn.tailwindcss.com"></script>
 </body>
 </html>
