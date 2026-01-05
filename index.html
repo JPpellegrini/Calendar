@@ -1,20 +1,68 @@
-<!doctype html>
-<html class="bg-white dark:bg-gray-950 scheme-light dark:scheme-dark">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-</head>
-<body>
-  @theme {
-    --font-sans: InterVariable, sans-serif;
-    --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-  }
-
-  <h1 class="text-3xl font-bold underline">
-    Hola Mundo!
-  </h1>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendario</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+</head>
+<body class="min-h-screen bg-slate-900">
+
+  <div class="min-h-screen grid grid-cols-1 lg:grid-cols-2">
+
+    <!-- LEFT: Login -->
+    <div class="flex items-center justify-center px-6">
+      <div class="w-full max-w-md text-white">
+
+        <h1 class="text-3xl font-semibold mb-2">
+          Iniciar Sesión
+        </h1>
+
+        <!-- Form -->
+        <form class="space-y-5">
+
+          <div>
+            <label class="block text-sm mb-1">Email</label>
+            <input
+              type="email"
+              class="w-full rounded-md bg-slate-800 border border-slate-700 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm mb-1">Password</label>
+            <input
+              type="password"
+              class="w-full rounded-md bg-slate-800 border border-slate-700 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+
+          <!-- Divider -->
+          <div class="my-6 flex items-center gap-3 text-slate-500 text-sm">
+            <div class="flex-1 h-px bg-slate-700"></div>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-indigo-500 hover:bg-indigo-600 transition rounded-md py-2 font-semibold"
+          >
+            Ingresar
+          </button>
+        </form>
+
+      </div>
+    </div>
+
+    <!-- RIGHT: Image -->
+    <div
+      class="hidden lg:block bg-cover bg-center"
+      style="background-image: url('https://images.unsplash.com/photo-1535615615570-3b839f4359be?q=80&w=1974&auto=format&fit=crop');"
+    >
+    </div>
+
+  </div>
+
 </body>
 </html>
+
