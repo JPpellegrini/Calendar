@@ -7,34 +7,35 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 </head>
-<body class="min-h-screen bg-slate-900">
+<body class="min-h-screen">
 
   <div class="min-h-screen grid grid-cols-1 lg:grid-cols-2">
 
     <!-- LEFT: Login -->
     <div class="flex items-center justify-center px-6">
-      <div class="w-full max-w-md text-white">
+      <div class="w-full max-w-md">
 
         <h1 class="text-3xl font-semibold mb-2">
           Iniciar Sesión
         </h1>
-
-        <!-- Form -->
-        <form class="space-y-5">
+        
+        <div class="space-y-5">
 
           <div>
             <label class="block text-sm mb-1">Email</label>
             <input
+              id="inputMail"
               type="email"
-              class="w-full rounded-md bg-slate-800 border border-slate-700 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              class="w-full rounded-md border border-slate-700 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
 
           <div>
             <label class="block text-sm mb-1">Password</label>
             <input
+              id="inputPass"
               type="password"
-              class="w-full rounded-md bg-slate-800 border border-slate-700 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              class="w-full rounded-md border border-slate-700 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
 
@@ -44,8 +45,8 @@
           </div>
 
           <button
-            type="submit"
-            class="w-full bg-indigo-500 hover:bg-indigo-600 transition rounded-md py-2 font-semibold"
+            onclick="ingresar()"
+            class="w-full bg-indigo-700 hover:bg-indigo-900 transition rounded-md py-2 font-semibold"
           >
             Ingresar
           </button>
@@ -57,12 +58,13 @@
     <!-- RIGHT: Image -->
     <div
       class="hidden lg:block bg-cover bg-center"
-      style="background-image: url('https://images.unsplash.com/photo-1535615615570-3b839f4359be?q=80&w=1974&auto=format&fit=crop');"
+      style="background-image: url('./assets/images/login-bg.jpg');"
     >
     </div>
 
   </div>
 
+<script src="./assets/js/index.js"></script>
 </body>
 </html>
 
