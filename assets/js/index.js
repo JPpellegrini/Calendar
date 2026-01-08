@@ -1,3 +1,10 @@
+document.addEventListener("DOMContentLoaded", () => {
+  initStorage();
+
+  const data = getStorageData();
+  console.log("Datos en storage:", data);
+});
+
 function ingresar(){
     console.log('valores:');
     console.log(document.getElementById('inputPass').value);
