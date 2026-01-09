@@ -1,16 +1,39 @@
-const STORAGE_KEY = "calendar-storage";
+const STORAGE_CALENDAR = "calendar-storage";
+const STORAGE_USUARIO = "usuario-storage";
 
-function initStorage() {
-  if (!localStorage.getItem(STORAGE_KEY)) {
-    const data = {
+function iniciarStorage() {
+  if (!localStorage.getItem(STORAGE_USUARIO)) {
+    const dataUsuario = {
       id: 1,
-      fecha: new Date().toISOString().split("T")[0]
+      usuario: 'estefania',
+      pass: 'juampi'
     };
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    localStorage.setItem(STORAGE_USUARIO, JSON.stringify(dataUsuario));
+  }
+
+  if (!localStorage.getItem(STORAGE_CALENDAR)) {
+    const dataCalendar = {
+      id: 1,
+      fecha: '2026-01-25',
+      descripcion: 'salimos',
+      imagen: 'login-bg.jpg'
+    };
+    
+    localStorage.setItem(STORAGE_CALENDAR, JSON.stringify(dataCalendar));
   }
 }
 
-function getStorageData() {
-  return JSON.parse(localStorage.getItem(STORAGE_KEY));
+function verDatosStorage() {
+  console.log(JSON.parse(localStorage.getItem(STORAGE_CALENDAR)));
+  console.log(JSON.parse(localStorage.getItem(STORAGE_USUARIO)));
+}
+
+function verificarDatosUsuario(user, pass) {
+  const usuario = JSON.parse(localStorage.getItem(STORAGE_USUARIO));
+
+  if(usuario.usuario.toUpperCase().trim() == user.toUpperCase().trim() && usuario.pass.trim() == pass.trim())
+    return true;
+  
+  return false;
 }

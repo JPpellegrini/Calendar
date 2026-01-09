@@ -1,12 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
-  initStorage();
-
-  const data = getStorageData();
-  console.log("Datos en storage:", data);
+  iniciarStorage();
+  verDatosStorage();
 });
 
 function ingresar(){
-    console.log('valores:');
-    console.log(document.getElementById('inputPass').value);
-    console.log(document.getElementById('inputPass').value);
+  const usuario = document.getElementById('inputUsuario').value;
+  const pass = document.getElementById('inputPass').value;
+  
+  if(usuario.trim() == '' || pass.trim() == '') {
+    dispararError('Ingrese datos válidos');
+    return;
+  }
+  
+  if(!verificarDatosUsuario(usuario, pass))
+    dispararError('Usuario no encontrado');
+  else
+    window.location.href = 'menu.html';
+}
+
+function dispararError(texto) {
+  Swal.fire({
+      icon: "error",
+      title: texto,
+      allowOutsideClick: false,
+      allowEscapeKey: false
+  });
 }

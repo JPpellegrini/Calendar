@@ -6,6 +6,7 @@
   <title>Calendario</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="min-h-screen">
 
@@ -22,10 +23,10 @@
         <div class="space-y-5">
 
           <div>
-            <label class="block text-sm mb-1">Email</label>
+            <label class="block text-sm mb-1">Usuario</label>
             <input
-              id="inputMail"
-              type="email"
+              id="inputUsuario"
+              type="text"
               class="w-full rounded-md border border-slate-700 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
@@ -46,7 +47,7 @@
 
           <button
             onclick="ingresar()"
-            class="w-full bg-indigo-700 hover:bg-indigo-900 transition rounded-md py-2 font-semibold"
+            class="w-full bg-indigo-500 hover:bg-indigo-700 transition rounded-md py-2 font-semibold text-white"
           >
             Ingresar
           </button>
