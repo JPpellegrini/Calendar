@@ -15,7 +15,7 @@ function ingresar(){
   if(!verificarDatosUsuario(usuario, pass))
     dispararError('Usuario no encontrado');
   else
-    window.location.href = 'menu.html';
+    window.location.href = './pages/menu.html';
 }
 
 function dispararError(texto) {
