@@ -58,6 +58,12 @@ function cargarCalendario(mes, anio) {
             calendarGrid.appendChild(div);
         }
     }
+
+    if(hoy.getMonth() + 1 == mes && hoy.getFullYear() == anio){
+        const elemento = document.getElementById(`dia-${hoy.getDay()}`);
+        elemento.classList.add("bg-primary");// text-white");
+        elemento.classList.add("text-white");
+    }
 }
 
 function cerrarSesion(){
