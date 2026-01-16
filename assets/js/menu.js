@@ -1,5 +1,5 @@
 const hoy = new Date();
-const mes = hoy.getMonth() + 1; // 1-12
+const mes = hoy.getMonth() + 1;
 const anio = hoy.getFullYear();
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -60,8 +60,8 @@ function cargarCalendario(mes, anio) {
     }
 
     if(hoy.getMonth() + 1 == mes && hoy.getFullYear() == anio){
-        const elemento = document.getElementById(`dia-${hoy.getDay()}`);
-        elemento.classList.add("bg-primary");// text-white");
+        const elemento = document.getElementById(`dia-${hoy.getDate()}`);
+        elemento.classList.add("bg-primary");
         elemento.classList.add("text-white");
     }
 }
