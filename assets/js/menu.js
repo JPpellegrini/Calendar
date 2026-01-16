@@ -1,6 +1,8 @@
 const hoy = new Date();
 const mes = hoy.getMonth() + 1;
 const anio = hoy.getFullYear();
+let mesSeleccionado = mes;
+let anioSeleccionado = anio;
 
 document.addEventListener("DOMContentLoaded", () => {
     cargarCalendario(mes, anio);
@@ -13,9 +15,9 @@ function cargarCalendario(mes, anio) {
     ];
 
     // Título
-    const titulo = document.querySelector(".border-bottom h5");
+    const titulo = document.querySelector("#tituloMes");
     if (titulo) {
-        titulo.textContent = `${nombresMeses[mes - 1]} ${anio}`;
+        titulo.textContent = `${nombresMeses[mesSeleccionado - 1]} ${anioSeleccionado}`;
     }
 
     const calendarGrid = document.querySelector(".calendar-grid");
@@ -68,5 +70,15 @@ function cargarCalendario(mes, anio) {
 
 function cerrarSesion(){
     window.location.href = '../index.html';
+}
+
+function retroceder(){
+    anioSeleccionado = mesSeleccionado == 1 ? anioSeleccionado - 1 : anioSeleccionado;
+    mesSeleccionado = mesSeleccionado == 1 ? 12 : mesSeleccionado - 1;
+    cargarCalendario(mesSeleccionado, anioSeleccionado);
+}
+
+function avanzar(){
+    console.log(mes+1);
 }
 
