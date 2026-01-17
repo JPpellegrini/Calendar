@@ -79,6 +79,8 @@ function retroceder(){
 }
 
 function avanzar(){
-    console.log(mes+1);
+    anioSeleccionado = mesSeleccionado == 12 ? anioSeleccionado + 1 : anioSeleccionado;
+    mesSeleccionado = mesSeleccionado == 12 ? 1 : mesSeleccionado + 1;
+    cargarCalendario(mesSeleccionado, anioSeleccionado);
 }
 
