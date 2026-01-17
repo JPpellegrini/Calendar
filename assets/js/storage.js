@@ -13,13 +13,21 @@ function iniciarStorage() {
   }
 
   if (!localStorage.getItem(STORAGE_CALENDAR)) {
-    const dataCalendar = {
-      id: 1,
-      fecha: '2026-01-25',
-      descripcion: 'salimos',
-      imagen: 'login-bg.jpg'
-    };
-    
+    const dataCalendar = [
+      {
+        id: 1,
+        fecha: '2026-01-25',
+        descripcion: 'salimos',
+        imagen: 'login-bg.jpg'
+      },
+      {
+        id: 2,
+        fecha: '2026-02-14',
+        descripcion: 'otra salida',
+        imagen: 'otra.jpg'
+      }
+    ];
+
     localStorage.setItem(STORAGE_CALENDAR, JSON.stringify(dataCalendar));
   }
 }
