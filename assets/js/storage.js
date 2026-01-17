@@ -45,3 +45,7 @@ function verificarDatosUsuario(user, pass) {
   
   return false;
 }
+
+function consultarDiasRegalo() {
+  return JSON.parse(localStorage.getItem(STORAGE_CALENDAR));
+}

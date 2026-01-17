@@ -66,6 +66,37 @@ function cargarCalendario(mes, anio) {
         elemento.classList.add("bg-primary");
         elemento.classList.add("text-white");
     }
+    
+    marcarDiaRegaloEnMes(mes, anio);
+}
+
+function marcarDiaRegaloEnMes(mes, anio){
+    const diasRegalos = consultarDiasRegalo();
+    
+    diasRegalos.forEach(regalo => {
+        const anioRegalo = regalo.fecha.split("-")[0];
+        const mesRegalo = regalo.fecha.split("-")[1];
+        const diaRegalo = regalo.fecha.split("-")[2];
+
+        if(anioRegalo == anio && mesRegalo == mes){
+            const elemento = document.getElementById(`dia-${diaRegalo}`);
+
+            elemento.classList.add( "d-flex", "justify-content-center", "align-items-center", "position-relative" );
+
+            elemento.innerHTML = "";
+
+            const spanDia = document.createElement("span");
+            spanDia.textContent = diaRegalo;
+            spanDia.className = "position-absolute top-0 start-0 p-1";
+
+            const boton = document.createElement("button");
+            boton.className = "btn btn-outline-primary btn-sm";
+            boton.innerHTML = '<i class="fa-solid fa-gift"></i>';
+
+            elemento.appendChild(spanDia);
+            elemento.appendChild(boton);
+        }
+    });
 }
 
 function cerrarSesion(){
