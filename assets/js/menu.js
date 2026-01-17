@@ -82,7 +82,6 @@ function marcarDiaRegaloEnMes(mes, anio){
             const elemento = document.getElementById(`dia-${diaRegalo}`);
 
             elemento.classList.add( "d-flex", "justify-content-center", "align-items-center", "position-relative" );
-
             elemento.innerHTML = "";
 
             const spanDia = document.createElement("span");
@@ -90,8 +89,30 @@ function marcarDiaRegaloEnMes(mes, anio){
             spanDia.className = "position-absolute top-0 start-0 p-1";
 
             const boton = document.createElement("button");
-            boton.className = "btn btn-outline-primary btn-sm";
-            boton.innerHTML = '<i class="fa-solid fa-gift"></i>';
+
+            boton.className = ` btn rounded-circle d-flex justify-content-center align-items-center position-absolute shadow-sm border-0 `;
+            boton.style.background = "linear-gradient(135deg, #f8b4c8, #f3a1bd)";
+            boton.style.boxShadow = "0 4px 10px rgba(248, 180, 200, 0.6)";
+            boton.style.transition = "transform 0.2s ease, box-shadow 0.2s ease";
+            boton.innerHTML = '<i class="fa-solid fa-gift text-white"></i>';
+
+            if (window.innerWidth <= 576) { 
+                // Mobile
+                boton.style.width = "36px";
+                boton.style.height = "36px";
+            } else { 
+                // Desktop
+                boton.style.width = "46px";
+                boton.style.height = "46px";
+            }
+
+            // efecto hover (solo desktop)
+            boton.addEventListener("mouseenter", () => {
+                boton.style.transform = "scale(1.08)";
+            });
+            boton.addEventListener("mouseleave", () => {
+                boton.style.transform = "scale(1)";
+            });
 
             elemento.appendChild(spanDia);
             elemento.appendChild(boton);
