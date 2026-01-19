@@ -138,7 +138,7 @@ function avanzar(){
 }
 
 function abrirRegalo(regalo){
-    if (hoy.toISOString().split("T")[0] == regalo.fecha){
+    if (hoy.toISOString().split("T")[0] >= regalo.fecha){
         console.log("Abrir regalo");
     } else {
         dispararError('Aún no es momento de abrir este regalo, debes esperar...');
