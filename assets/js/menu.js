@@ -90,12 +90,12 @@ function marcarDiaRegaloEnMes(mes, anio){
 
             const boton = document.createElement("button");
 
-            boton.className = ` btn rounded-circle d-flex justify-content-center align-items-center position-absolute shadow-sm border-0 `;
+            boton.className = "regalo-btn btn rounded-circle d-flex justify-content-center align-items-center position-absolute shadow-sm border-0";
             boton.style.background = "linear-gradient(135deg, #f8b4c8, #f3a1bd)";
             boton.style.boxShadow = "0 4px 10px rgba(248, 180, 200, 0.6)";
             boton.style.transition = "transform 0.2s ease, box-shadow 0.2s ease";
             boton.innerHTML = '<i class="fa-solid fa-gift text-white"></i>';
-            boton.onclick = () => abrirRegalo(regalo);
+            boton.onclick = () => abrirRegalo(boton, regalo);
 
             if (window.innerWidth <= 576) { 
                 // Mobile
@@ -137,12 +137,38 @@ function avanzar(){
     cargarCalendario(mesSeleccionado, anioSeleccionado);
 }
 
-function abrirRegalo(regalo){
+function abrirRegalo(boton, regalo){
     if (hoy.toISOString().split("T")[0] >= regalo.fecha){
-        console.log("Abrir regalo");
+        explotarBoton(boton);
     } else {
         dispararError('Aún no es momento de abrir este regalo, debes esperar...');
     }
+}
+
+function explotarBoton(boton){
+    boton.classList.add("cargando");
+
+    setTimeout(() => {
+        boton.classList.remove("cargando");
+        boton.classList.add("exploto");
+
+        setTimeout(() => {
+            cargarModal();
+            abrirModal();
+            boton.classList.remove("exploto");
+        }, 600);
+
+    }, 2000);
+}
+
+function cargarModal(){
+}
+
+function abrirModal(){
+    const modal = new bootstrap.Modal(
+        document.getElementById("modalRegalo")
+    );
+    modal.show();
 }
 
 function dispararError(texto) {
