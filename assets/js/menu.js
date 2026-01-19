@@ -95,6 +95,7 @@ function marcarDiaRegaloEnMes(mes, anio){
             boton.style.boxShadow = "0 4px 10px rgba(248, 180, 200, 0.6)";
             boton.style.transition = "transform 0.2s ease, box-shadow 0.2s ease";
             boton.innerHTML = '<i class="fa-solid fa-gift text-white"></i>';
+            boton.onclick = () => abrirRegalo(regalo);
 
             if (window.innerWidth <= 576) { 
                 // Mobile
@@ -136,3 +137,19 @@ function avanzar(){
     cargarCalendario(mesSeleccionado, anioSeleccionado);
 }
 
+function abrirRegalo(regalo){
+    if (hoy.toISOString().split("T")[0] == regalo.fecha){
+        console.log("Abrir regalo");
+    } else {
+        dispararError('Aún no es momento de abrir este regalo, debes esperar...');
+    }
+}
+
+function dispararError(texto) {
+  Swal.fire({
+      icon: "error",
+      title: texto,
+      allowOutsideClick: false,
+      allowEscapeKey: false
+  });
+}
