@@ -139,13 +139,15 @@ function avanzar(){
 
 function abrirRegalo(boton, regalo){
     if (hoy.toISOString().split("T")[0] >= regalo.fecha){
-        explotarBoton(boton);
+        explotarBoton(boton, regalo);
     } else {
         dispararError('Aún no es momento de abrir este regalo, debes esperar...');
     }
 }
 
-function explotarBoton(boton){
+function explotarBoton(boton, regalo){
+    cargarModal(regalo);
+
     boton.classList.add("cargando");
 
     setTimeout(() => {
@@ -153,15 +155,16 @@ function explotarBoton(boton){
         boton.classList.add("exploto");
 
         setTimeout(() => {
-            cargarModal();
             abrirModal();
             boton.classList.remove("exploto");
         }, 600);
-
     }, 2000);
 }
 
-function cargarModal(){
+function cargarModal(regalo){
+    document.getElementById("descripcionRegalo").innerText = regalo.descripcion;
+    document.getElementById("imagenRegalo").src = "../assets/images/login-bg.jpg";
+    console.log(regalo);
 }
 
 function abrirModal(){
