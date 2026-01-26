@@ -2,17 +2,12 @@ const STORAGE_CALENDAR = "calendar-storage";
 const STORAGE_USUARIO = "usuario-storage";
 
 function iniciarStorage() {
-  if (!localStorage.getItem(STORAGE_USUARIO)) {
     const dataUsuario = {
       id: 1,
       usuario: 'estefania',
       pass: 'juampi'
     };
 
-    localStorage.setItem(STORAGE_USUARIO, JSON.stringify(dataUsuario));
-  }
-
-  if (!localStorage.getItem(STORAGE_CALENDAR)) {
     const dataCalendar = [
       {
         id: 1,
@@ -28,8 +23,8 @@ function iniciarStorage() {
       }
     ];
 
+    localStorage.setItem(STORAGE_USUARIO, JSON.stringify(dataUsuario));
     localStorage.setItem(STORAGE_CALENDAR, JSON.stringify(dataCalendar));
-  }
 }
 
 function verDatosStorage() {
