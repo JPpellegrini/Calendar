@@ -74,13 +74,13 @@ function marcarDiaRegaloEnMes(mes, anio){
     const diasRegalos = consultarDiasRegalo();
     
     diasRegalos.forEach(regalo => {
-        const anioRegalo = regalo.fecha.split("-")[0];
-        const mesRegalo = regalo.fecha.split("-")[1];
-        const diaRegalo = regalo.fecha.split("-")[2];
+        const anioRegalo = Number(regalo.fecha.split("-")[0]);
+        const mesRegalo  = Number(regalo.fecha.split("-")[1]);
+        const diaRegalo  = Number(regalo.fecha.split("-")[2]);
 
         if(anioRegalo == anio && mesRegalo == mes){
             const elemento = document.getElementById(`dia-${diaRegalo}`);
-
+            
             elemento.classList.add( "d-flex", "justify-content-center", "align-items-center", "position-relative" );
             elemento.innerHTML = "";
 
@@ -163,8 +163,8 @@ function explotarBoton(boton, regalo){
 
 function cargarModal(regalo){
     document.getElementById("descripcionRegalo").innerText = regalo.descripcion;
-    document.getElementById("imagenRegalo").src = "../assets/images/login-bg.jpg";
-    console.log(regalo);
+    document.getElementById("imagenRegalo").src = `../assets/images/${regalo.imagen}`;
+    document.getElementById("tituloRegalo").innerText = regalo.titulo;
 }
 
 function abrirModal(){

@@ -11,25 +11,21 @@ function iniciarStorage() {
     const dataCalendar = [
       {
         id: 1,
-        fecha: '2026-01-25',
-        descripcion: 'salimos',
-        imagen: 'login-bg.jpg'
+        titulo: 'Calendario Adviento Personalizado',
+        fecha: '2026-01-01',
+        descripcion: 'Este es mi más grande regalo, no solo lo creé yo mismo pensado para vos. Sino que también incluido con esto esta todo mi Amor, aprecio y dedicación hacia vos. Acá esta mi mas grande esfuerzo para darte el mejor regalo personalizado, todo para una mujer increíble como vos.\nAca vas a poder ver regalos que vas a recibir o que recibiste (ya están planeados jeje) y podes tener tu propio calendario de adviento con regalos infinitos.\nEspero que disfrutes esta aventura infinita, te Amo con todo mi corazón, hasta el infinito y más allá, a pasitos de tortuga ida y vuelta, y en mayúsculas mi vida. Te Amoo infinitoo ❤️',
+        imagen: 'calendario.jpg'
       },
       {
         id: 2,
-        fecha: '2026-02-14',
+        fecha: '2026-01-02',
         descripcion: 'otra salida',
-        imagen: 'otra.jpg'
+        imagen: 'login-bg.jpg'
       }
     ];
 
     localStorage.setItem(STORAGE_USUARIO, JSON.stringify(dataUsuario));
     localStorage.setItem(STORAGE_CALENDAR, JSON.stringify(dataCalendar));
-}
-
-function verDatosStorage() {
-  console.log(JSON.parse(localStorage.getItem(STORAGE_CALENDAR)));
-  console.log(JSON.parse(localStorage.getItem(STORAGE_USUARIO)));
 }
 
 function verificarDatosUsuario(user, pass) {
