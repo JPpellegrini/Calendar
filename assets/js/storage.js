@@ -18,9 +18,10 @@ function iniciarStorage() {
       },
       {
         id: 2,
+        titulo: 'Picnic',
         fecha: '2026-01-02',
-        descripcion: 'otra salida',
-        imagen: 'login-bg.jpg'
+        descripcion: 'Hoy el plan es salir y disfrutar del aire libre.\nCompartir algo rico, sentarnos tranquilos y dejar que el tiempo pase sin apuro.\nUna manta, una buena charla y el simple placer de estar juntos.\nUn momento pensado para disfrutar lo simple y lo verdadero.',
+        imagen: 'picnic.jpg'
       }
     ];
 
