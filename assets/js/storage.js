@@ -46,7 +46,7 @@ function iniciarStorage() {
       },
       {
         id: 6,
-        titulo: 'Comida en carrito',
+        titulo: 'Ir a comer a un carrito',
         fecha: '2026-01-06',
         descripcion: 'Hoy no hay formalidades ni reglas.\nElegimos un carrito, pedimos lo que tengamos ganas\ny comemos ahí, disfrutando del momento.\nUn plan espontáneo, divertido y sin complicaciones.',
         imagen: 'carrito-comida.jpg'
@@ -67,7 +67,7 @@ function iniciarStorage() {
       },
       {
         id: 9,
-        titulo: 'Competencia arte con plastilina',
+        titulo: 'Competencia de arte con plastilina',
         fecha: '2026-01-09',
         descripcion: 'Hoy toca creatividad y risas.\nPlastilina, imaginación y una competencia divertida\ndonde todo vale, incluso las obras más absurdas.\nLo importante es pasarla bien juntos.',
         imagen: 'competencia-plastilina.jpg'
@@ -88,14 +88,14 @@ function iniciarStorage() {
       },
       {
         id: 12,
-        titulo: 'Dia para ver peli en casa',
+        titulo: 'Día para ver una peli en casa',
         fecha: '2026-01-12',
         descripcion: 'Hoy nos quedamos en casa.\nElegimos una película, preparamos algo rico\ny nos acomodamos para disfrutarla sin interrupciones.\nUn plan ideal para relajarse y compartir.',
         imagen: 'peli-casa.jpg'
       },
       {
         id: 13,
-        titulo: 'Comida restaurante',
+        titulo: 'Salir a comer en un restaurante',
         fecha: '2026-01-13',
         descripcion: 'Hoy salimos a comer afuera.\nElegimos un restaurante lindo y nos sentamos tranquilos.\nDisfrutamos una buena comida compartida.\nUn momento especial para cortar la rutina.',
         imagen: 'restaurante.jpg'
@@ -123,7 +123,7 @@ function iniciarStorage() {
       },
       {
         id: 17,
-        titulo: 'Regalar flores',
+        titulo: 'Flores de regalo',
         fecha: '2026-01-17',
         descripcion: 'Hoy es un día para un detalle especial.\nFlores elegidas con cariño, solo porque sí.\nSin motivo, sin ocasión particular.\nUn gesto simple que dice mucho.',
         imagen: 'flores.jpg'
