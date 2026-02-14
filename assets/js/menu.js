@@ -4,6 +4,25 @@ const anio = hoy.getFullYear();
 let mesSeleccionado = mes;
 let anioSeleccionado = anio;
 
+console.log('hoy');
+console.log(hoy);
+console.log(mes);
+console.log(anio);
+console.log('hora');
+console.log(hoy.getHours());
+console.log(hoy.getMinutes());
+console.log('-------------------------------');
+const fechaHoraActual = new Date().toLocaleString('es-AR', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false
+});
+console.log(fechaHoraActual);
+
 document.addEventListener("DOMContentLoaded", () => {
     cargarCalendario(mes, anio);
 });
