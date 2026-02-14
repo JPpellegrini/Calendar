@@ -4,25 +4,6 @@ const anio = hoy.getFullYear();
 let mesSeleccionado = mes;
 let anioSeleccionado = anio;
 
-console.log('hoy');
-console.log(hoy);
-console.log(mes);
-console.log(anio);
-console.log('hora');
-console.log(hoy.getHours());
-console.log(hoy.getMinutes());
-console.log('-------------------------------');
-const fechaHoraActual = new Date().toLocaleString('es-AR', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: false
-});
-console.log(fechaHoraActual);
-
 document.addEventListener("DOMContentLoaded", () => {
     cargarCalendario(mes, anio);
 });
@@ -157,7 +138,10 @@ function avanzar(){
 }
 
 function abrirRegalo(boton, regalo){
-    if (hoy.toISOString().split("T")[0] >= regalo.fecha){
+    const hoySinHora = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
+    const fechaRegalo = new Date(regalo.fecha + "T00:00:00");
+    
+    if (hoySinHora >= fechaRegalo){
         explotarBoton(boton, regalo);
     } else {
         dispararError('Aún no es momento de abrir este regalo, debes esperar...');
